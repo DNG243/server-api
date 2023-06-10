@@ -13,37 +13,40 @@
     />
   </head>
   <body>
-    <div class=" bg-black m-3">
+    <div class="bg-black m-3">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2">
               <a class="navbar-brand text-white p-1" href="http://localhost:3000/"><H1>HOME</H1></a>
-              <a class="navbar-brand text-white p-1" href="http://localhost:3000/sanpham/listSp"><H1>LIST</H1></a>
-
+              <a
+                class="navbar-brand text-white p-1"
+                href="http://localhost:3000/list/listsp"
+                ><H1>LIST</H1></a
+              >
             </ul>
             <!-- <a href="http://localhost:3000/register" class="btn btn-outline-info"
-              >REGISTER</a
-            > -->
-            <a
-              href="http://localhost:3000/users/reg"
-              class="btn btn-outline-info m-lg-2"
-              >REGISTER</a
-            >
-              <a
-              href="http://localhost:3000/users/login"
-              class="btn btn-outline-info m-lg-2"
-              >LOGIN</a
-            >
+                >REGISTER</a
+              > -->
           </div>
         </div>
       </nav>
     </div>
- 
+    <h1 class="p-3 m-3">TRANG ĐĂNG KÝ</h1>
 
+    <form class="p-3 m-3" action="" method="post">
+      Name: <input class="input-group mb-3" type="text" name="name" /> <br />
+      Username: <input class="input-group mb-3" type="text" name="username" /> <br />
+      Password: <input class="input-group mb-3" type="password" name="passwd" /> <br />
+      Confirm password: <input class="input-group mb-3" type="password" name="passwd2" /> <br />
+      Email: <input class="input-group mb-3" type="email" name="email" /> <br />
+      Avatar: <input class="input-group mb-3" type="text" name="status" /> <br />
 
+      <button class="btn btn-outline-primary" type="submit">Register</button>
+    </form>
 
-      
+    <div class="p-3 m-3 "><%= msg %></div>
+
     <div class="row bg-info p-3 m-3">
       <h3 class="text-center">Nguyễn Tuấn Dương</h3>
       <h3 class="text-center">email: duongntph26844@fpt.edu.vn</h3>
