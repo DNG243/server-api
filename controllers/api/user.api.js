@@ -6,20 +6,20 @@ exports.Login = async (req, res, next) => {
     console.log(objU);
 
     if (objU != null) {
-        //có tồn tại user
-        //kiểm tra pass
-        if (objU.passwd == req.body.passwd) {
-          //đăng nhập thành công
-          //ghi dữ liệu vào session
-          req.session.userLogin = objU;
-          //chuyển trang
-          return res.redirect("/");
-        } else {
-          msg = "sai password";
-        }
+      //có tồn tại user
+      //kiểm tra pass
+      if (objU.passwd == req.body.passwd) {
+        //đăng nhập thành công
+        //ghi dữ liệu vào session
+        req.session.userLogin = objU;
+        //chuyển trang
+        return res.redirect("/");
       } else {
-        msg = "không tồn tại user";
+        msg = "sai password";
       }
+    } else {
+      msg = "không tồn tại user";
+    }
 
     if (objU) {
       return res
@@ -62,5 +62,20 @@ exports.Reg = async (req, res, next) => {
     } catch (error) {
       return res.status(500).json({ msg: error.message });
     }
+  }
+};
+
+exports.listUser = async (req, res, next) => {
+  try {
+    let list = await md.userModel.find();
+    if (list) {
+      return res
+        .status(200)
+        .json({ data: list, msg: "lay du lieu thanh cong" });
+    } else {
+      return res.status(204).json({ msg: "khong co du lieu" });
+    }
+  } catch (error) {
+    return res.status(500).json({ msg: error.message });
   }
 };

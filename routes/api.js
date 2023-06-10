@@ -11,4 +11,8 @@ router.get('/login',api_user.Login);
 
 router.post('/reg',api_user.Reg);
 
+router.get('/listUser',api_user.listUser);
+
+
+
 module.exports = router;
